@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <meta
+    name = "viewport"
+    content = "width=device-width"
+  >
+  <meta
+    http-equiv = "X-UA-Compatible"
+    content = "ie=edge"
+  >
+  <title>Praxis Tasks</title>
+  <script type="module" src = "../main.js"></script>
+</head>
+<body>
+  <div data-js-notes>
+    <form data-js-notes-new-form>
+      <input type="text" data-js-notes-new-title placeholder="Note title..." required />
+      <textarea data-js-notes-new-text placeholder="Note text..." required></textarea>
+      <button type="submit">Add Note</button>
+    </form>
+
+    <button data-js-notes-delete-all>Delete All</button>
+
+    <ul data-js-notes-list></ul>
+  </div>
+
+</body>
+</html>

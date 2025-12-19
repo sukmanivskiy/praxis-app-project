@@ -10,5 +10,24 @@ import './styles/button.scss'
 import './styles/todo-item.scss'
 
 import TodoLogic from "./modules/TodoLogic.js";
+import QuoteLogic from "@/modules/QuoteLogic.js";
+import NotesLogic from "@/modules/NotesLogic.js";
 
-new TodoLogic();
+const isTodoActive= document.querySelector("[data-js-todo]");
+const isQuotesActive= document.querySelector("[data-js-quotes]");
+const isNotesActive= document.querySelector("[data-js-notes]");
+
+if (isTodoActive) {
+  new TodoLogic();
+}
+
+if (isQuotesActive) {
+  new QuoteLogic()
+}
+
+if (isNotesActive) {
+  new NotesLogic()
+}
+
+
+
