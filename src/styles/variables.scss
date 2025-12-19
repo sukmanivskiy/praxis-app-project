@@ -1,0 +1,24 @@
+:root {
+  --font-family-main: "Josefine Sans" ;
+
+  --color-blue:oklch(0.6746 0.1414 261.34);
+  --color-red: oklch(0.661 0.226 27.756);
+  --color-green: oklch(0.6126 0.2521 153.11);
+
+  --color-black: #1c1c1c;
+  --color-white: #ffffff;
+  --color-gray: #666666;
+
+  --container-width: 1280px;
+  --desktop-width: 1440px;
+
+  --container-padding-x:15px;
+  --container-padding-y:60px;
+
+  --input-height: 48px;
+  --button-height: 48px;
+
+  --transition-duration: 0.2s;
+
+  --border-radius-s: 5px;
+}

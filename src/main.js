@@ -1,24 +1,14 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import '@a1rth/css-normalize'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+import './styles/variables.scss'
+import './styles/utils.scss'
+import './styles/fonts.scss'
+import './styles/globals.scss'
+import './styles/todo.scss'
+import './styles/field.scss'
+import './styles/button.scss'
+import './styles/todo-item.scss'
 
-setupCounter(document.querySelector('#counter'))
+import TodoLogic from "./modules/TodoLogic.js";
+
+new TodoLogic();

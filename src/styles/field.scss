@@ -1,0 +1,14 @@
+.field {
+  width: 100%;
+
+  &__input {
+    width: 100%;
+
+    height: var(--input-height);
+    background-color: transparent;
+    color: var(--color-white);
+    border: 3px solid var(--color-white);
+    padding: 10px;
+    border-radius: var(--border-radius-s);
+  }
+}

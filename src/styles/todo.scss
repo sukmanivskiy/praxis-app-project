@@ -1,0 +1,45 @@
+.todo {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  &__title {
+    color: var(--color-blue);
+    align-self: center;
+  }
+
+  &__form {
+    margin-top: 40px;
+    display: flex;
+    justify-content: stretch;
+    column-gap: 10px;
+    width: 100%;
+    max-width: 600px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__delete-all-button {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    color: var(--color-blue);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+}
