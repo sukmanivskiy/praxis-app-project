@@ -1,24 +1,28 @@
-@use './helpers/mixins' as *; // або @import '../helpers/mixins';
-@use './helpers/media' as *;
 
 .todo-item {
+--todoItemPadding: 15px;
+
   display: flex;
-  align-items: center;
   column-gap: 16px;
-  border-bottom: 2px solid var(--color-blue);
-  padding-bottom: 5px;
   position: relative;
+  background-color: var(--color-gray-250);
+  border-radius: var(--border-radius-s);
+  padding: var(--todoItemPadding);
+  box-shadow: 8px 8px 5px 0 var(--color-black);
+  border-bottom: 2px solid var(--color-black);
+  border-right: 2px solid var(--color-black);
+  border-top: 2px solid var(--color-gray);
+  border-left: 2px solid var(--color-gray);
 
   > svg {
     position: absolute;
-    top: 35%;
-    translate: 0 -50%;
-    left: 5px;
+    top: calc(var(--todoItemPadding) - 5px);
+    left: calc(var(--todoItemPadding) + 3px);
     width: 22px;
     height: 22px;
-    color: var(--color-green);
+    color: var(--color-violet);
     scale: 0;
-    z-index: -1;
+    z-index: 0;
     transition-duration: var(--transition-duration);
   }
 
@@ -26,17 +30,18 @@
     flex-shrink: 0;
     appearance: none;
     position: relative;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     margin: 0;
+    z-index: 1;
     border: 2px solid var(--color-gray);
     border-radius: 50%;
 
     &:checked {
-      border-color: var(--color-green);
+      border-color: var(--color-violet);
 
       ~ svg {
-        scale: 1.4;
+        scale: 1.2;
       }
 
       ~label {
@@ -48,12 +53,13 @@
 
   &__label {
     width: 100%;
+    align-self: center;
   }
 
   &__delete-button {
-    @include square(40px);
+    @include square(25px);
 
-    padding: 5px;
+    padding: 0;
     border: none;
     background-color: transparent;
     color: var(--color-red);

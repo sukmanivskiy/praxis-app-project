@@ -10,21 +10,55 @@
     http-equiv = "X-UA-Compatible"
     content = "ie=edge"
   >
-  <title>Praxis Tasks</title>
+  <title>Praxis | Notes</title>
   <script type="module" src = "../main.js"></script>
 </head>
 <body>
-  <div data-js-notes>
-    <form data-js-notes-new-form>
-      <input type="text" data-js-notes-new-title placeholder="Note title..." required />
-      <textarea data-js-notes-new-text placeholder="Note text..." required></textarea>
-      <button type="submit">Add Note</button>
-    </form>
+<main>
+  <section aria-labelledby="notes" data-js-notes>
+    <div class="notes__background background" data-js-notes-background >
+    </div>
+    <div class="notes__inner container">
+        <h1 class="notes__title title">Note Your Feelings</h1>
 
-    <button data-js-notes-delete-all>Delete All</button>
+      <form class="notes__form" data-js-notes-new-form>
+        <fieldset class="notes__fieldset">
 
-    <ul data-js-notes-list></ul>
-  </div>
+          <div class="field">
+            <label class="visually-hidden" for="note-title">Title</label>
+            <input
+              class = "field__input"
+              id="note-title"
+              name="note-title"
+              type="text"
+              data-js-notes-new-title
+              placeholder="Note title"
+              required
+            />
+          </div>
 
+          <div class="field">
+            <label class="visually-hidden" for="note-text">Text</label>
+            <textarea
+              class = "field__input field__input--textarea"
+              id="note-text"
+              name="note-text"
+              data-js-notes-new-text
+              placeholder="Note text"
+              required
+            ></textarea>
+          </div>
+
+          <button class=" notes__button button" type="submit">Add</button>
+        </fieldset>
+      </form>
+      <button class="notes__delete-button" type="button" data-js-notes-delete-all>
+          Delete All
+      </button>
+      <ul class="notes__list" data-js-notes-list></ul>
+    </div>
+  </section>
+</main>
 </body>
+
 </html>

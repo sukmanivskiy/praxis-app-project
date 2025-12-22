@@ -10,7 +10,7 @@
     http-equiv = "X-UA-Compatible"
     content = "ie=edge"
   >
-  <title>Praxis Tasks</title>
+  <title>Praxis | Tasks</title>
   <script type="module" src = "../main.js"></script>
 </head>
 <body>
@@ -61,48 +61,52 @@
         </g>
       </symbol>
     </svg>
-    <div class="todo container" data-js-todo>
-      <h1 class="todo__title">Your Daily Tasks</h1>
-      <form
-        class = "todo__form"
-        data-js-todo-new-task-form
-      >
-        <div class="todo__field field">
-          <label
-            for = "new-task"
-            class = "field__label visually-hidden"
+    <div class="todo" data-js-todo>
+      <div class="todo__background background" data-js-todo-background></div>
+      <div class="todo__inner container">
+        <h1 class="todo__title title">Your Daily Tasks</h1>
+        <form
+          class = "todo__form"
+          data-js-todo-new-task-form
+        >
+          <div class="todo__field field">
+            <label
+              for = "new-task"
+              class = "field__label visually-hidden"
+            >
+              New task title
+            </label>
+            <input
+              class = "field__input"
+              id = "new-task"
+              placeholder="New task title"
+              autocomplete = "off"
+              maxlength="100"
+              data-js-todo-new-task-input
+            />
+          </div>
+          <button
+            class = "todo__button button"
+            type = "submit"
           >
-            New task title
-          </label>
-          <input
-          class = "field__input"
-          id = "new-task"
-          placeholder="New task title"
-          autocomplete = "off"
-          data-js-todo-new-task-input
-          />
+            Add
+          </button>
+        </form >
+        <div class="todo__info">
+          <div class="todo__total-tasks">
+            Total Tasks: <span data-js-todo-total-tasks>0</span>
+          </div>
+          <button
+            class = "todo__delete-all-button"
+            type = "button"
+            data-js-todo-delete-all-button
+          >
+            Delete All
+          </button>
         </div>
-        <button
-          class = "button"
-          type = "submit"
-        >
-          Add
-        </button>
-      </form >
-      <div class="todo__info">
-        <div class="todo__total-tasks">
-          Total Tasks: <span data-js-todo-total-tasks>0</span>
-        </div>
-        <button
-          class = "todo__delete-all-button"
-          type = "button"
-          data-js-todo-delete-all-button
-        >
-          Delete All
-        </button>
+        <ul class="todo__list" data-js-todo-list>
+        </ul>
       </div>
-      <ul class="todo__list" data-js-todo-list>
-      </ul>
     </div>
 </body>
 </html>

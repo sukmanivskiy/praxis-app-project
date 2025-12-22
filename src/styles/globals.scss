@@ -12,14 +12,13 @@ body {
   flex-direction: column;
   font-family: var(--font-family-main), sans-serif;
   color: var(--color-white);
-  background-color: var(--color-black);
-  max-width: var(--desktop-width);
+  background-color: var(--color-dark);
   margin-inline: auto;
 }
 
 h1,
 .h1 {
-  @include fluid-text(64, 28);
+  @include fluid-text(64, 32);
 
   font-weight: 600;
   line-height: 1.2;
@@ -78,7 +77,7 @@ a {
     color: var(--color-accent);
   }
   &.is-active {
-    border-bottom: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-dark);
     @include hover {
       border-bottom: 2px solid var(--color-accent);
     }

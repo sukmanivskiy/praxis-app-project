@@ -50,16 +50,21 @@ export default class {
     );
 
     this.listElement.innerHTML = items.map(({ id, title, text, date }) => `
-      <li class="note-item" data-js-notes-item>
-        <details data-js-notes-item-details>
-          <summary>
-            <span data-js-notes-item-title>${title}</span>
-            <span data-js-notes-item-date>${date}</span>
+      <li class="notes__item" data-js-notes-item>
+        <details class="notes__details" data-js-notes-item-details>
+          <summary class="notes__summary">
+            <span class="notes__title" data-js-notes-item-title>${title}</span>
+            <span class="notes__date" data-js-notes-item-date>${date}</span>
           </summary>
-          <div data-js-notes-item-text>${text}</div>
-          <button type="button" 
-                  data-js-notes-item-delete-button 
-                  data-id="${id}">Delete</button>
+          <div class="notes__text" data-js-notes-item-text>
+            <p>${text}</p>
+            <button 
+              type="button" 
+              class="notes__delete-button notes__note-button"
+              data-js-notes-item-delete-button 
+              data-id="${id}">Delete</button>
+            </div>
+          
         </details>
       </li>
     `).join('');

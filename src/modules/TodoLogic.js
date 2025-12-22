@@ -32,8 +32,9 @@ export default class {
     this.state = {
       items:this.getItemsFromLocalStorage(),
     }
-    this.render()
-    this.bindEvents()
+    this.checkAndResetDaily();
+    this.render();
+    this.bindEvents();
   }
 
   getItemsFromLocalStorage() {
@@ -53,10 +54,12 @@ export default class {
   }
 
   saveItemsToLocalStorage() {
+    this.state.items = this.sortItems(this.state.items);
+
     localStorage.setItem(
       this.localStorageKey,
       JSON.stringify(this.state.items)
-    )
+    );
   }
 
   render() {
@@ -105,6 +108,16 @@ export default class {
 
   }
 
+  sortItems(items) {
+    return [...items].sort((a, b) => {
+      if (a.isChecked !== b.isChecked) {
+        return a.isChecked - b.isChecked;
+      }
+
+      return 0;
+    });
+  }
+
   addItem(title) {
     this.state.items.push({
       id: crypto?.randomUUID() ?? Date.now().toString(),
@@ -127,10 +140,11 @@ export default class {
         return {
           ...item,
           isChecked: !item.isChecked,
-        }
+        };
       }
       return item;
     });
+
     this.saveItemsToLocalStorage();
     this.render();
   }
@@ -169,8 +183,28 @@ export default class {
 
   onChange = ({target}) => {
     if(target.matches(this.selectors.itemCheckbox)) {
-      this.toggleCheckedState(target.id)
+      setTimeout(() => {
+        this.toggleCheckedState(target.id);
+      }, 350);
     }
+  }
+
+  getTodayDate() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  checkAndResetDaily() {
+    const today = this.getTodayDate();
+    const last = localStorage.getItem(this.lastUsedDateKey);
+
+    if (last !== today) {
+      // День змінився → очищаємо всі задачі
+      this.state.items = [];
+      this.saveItemsToLocalStorage();
+    }
+
+    // Оновлюємо дату
+    localStorage.setItem(this.lastUsedDateKey, today);
   }
 
   bindEvents() {
