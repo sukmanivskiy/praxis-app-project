@@ -11,16 +11,38 @@
     content = "ie=edge"
   >
   <title>Praxis | Philosophy</title>
-  <script type="module" src = "../main.js"></script>
+  <script
+    type = "module"
+    src = "../main.js"
+  ></script>
 </head>
 <body>
-  <div class="quotes">
-    <div class="quotes__background background" data-js-quotes-background></div>
-    <div class="quotes__inner container" data-js-quotes>
-      <h1 class="quotes__title title">Philosophy of a Day</h1>
-      <blockquote class='quotes__cite' data-js-quotes-text></blockquote>
-      <div class="quotes__philosophy" data-js-quotes-philosophy></div>
+  <main>
+    <div class = "quotes">
+      <div
+        class = "quotes__background background"
+        data-js-quotes-background
+      ></div>
+
+      <section
+        class = "quotes__inner container"
+        data-js-quotes
+      >
+        <h1 class = "quotes__title title">Philosophy of a Day</h1>
+
+        <figure class = "quotes__item">
+          <blockquote
+            class = "quotes__cite"
+            data-js-quotes-text
+          ></blockquote>
+          <figcaption
+            class = "quotes__philosophy"
+            data-js-quotes-philosophy
+          ></figcaption>
+        </figure>
+      </section>
     </div>
-  </div>
+  </main>
 </body>
+
 </html>

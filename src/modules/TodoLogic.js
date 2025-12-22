@@ -198,12 +198,11 @@ export default class {
     const last = localStorage.getItem(this.lastUsedDateKey);
 
     if (last !== today) {
-      // День змінився → очищаємо всі задачі
+
       this.state.items = [];
       this.saveItemsToLocalStorage();
     }
 
-    // Оновлюємо дату
     localStorage.setItem(this.lastUsedDateKey, today);
   }
 

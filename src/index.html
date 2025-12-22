@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <meta
+    name = "viewport"
+    content = "width=device-width"
+  >
+  <meta
+    http-equiv = "X-UA-Compatible"
+    content = "ie=edge"
+  >
+  <title>Praxis | Home</title>
+  <script type="module" src = "./main.js"></script>
+</head>
+<body>
+<div class="home" data-js-home>
+  <header>
+    <h1 class="title">Praxis</h1>
+  </header>
+  <main class="home__content">
+    <section class = "home__todo todo tile" data-js-todo-viewer >
+      <h2 class="todo__title title">Tasks</h2>
+      <div class="tile__body">
+        <p data-js-todo-viewer-empty></p>
+        <ul class="tile__list" data-js-todo-viewer-list></ul>
+      </div>
+      <a
+        class = "tile__link--todo"
+        href = "./todo/index.html"
+      >
+        Manage Tasks
+      </a>
+    </section>
+    <section class = "home__quotes quotes tile" data-js-quote-viewer >
+      <h2 class="tile__title title h3">Philosophy</h2>
+      <div class="tile__body">
+        <p class="quotes__cite tile__cite" data-js-quote-viewer-text></p>
+      </div>
+      <a
+        class = "tile__link--quote"
+        href = "./philosophy/index.html"
+      >
+        View More
+      </a>
+    </section>
+    <section class = "home__notes notes tile" data-js-notes-viewer >
+      <h2 class="tile__title title h3">Notes</h2>
+      <div class="tile__body" >
+        <p  data-js-notes-viewer-empty></p>
+        <ul class="tile__list" data-js-notes-tile-list  data-js-notes-viewer-list></ul>
+      </div>
+      <a
+        class = "tile__link--notes"
+        href = "./notes/index.html"
+      >
+        Open Notes
+      </a>
+    </section>
+    <section class="home__timer tile" data-js-timer>
+      <h2 class="tile__title title h3">Timer</h2>
+      <div class="tile__body">
+        <div class="timer">
+          <div class="timer__display-container">
+            <button class="timer__button" data-js-timer-minus>-</button>
+            <div class="timer__display" data-js-timer-display>00:00</div>
+            <button class="timer__button" data-js-timer-plus>+</button>
+          </div>
+
+          <div class="timer__controls">
+            <button class="timer__button" data-js-timer-start>Start</button>
+            <button class="timer__button" data-js-timer-reset>Reset</button>
+          </div>
+
+          <div class="timer__modes">
+            <button class="timer__button" data-js-timer-mode data-value="5">5</button>
+            <button class="timer__button" data-js-timer-mode data-value="10">10</button>
+            <button class="timer__button" data-js-timer-mode data-value="30">30</button>
+            <button class="timer__button" data-js-timer-mode data-value="45">45</button>
+          </div>
+
+          <audio data-js-timer-sound >
+            <source src="./assets/sounds/timer_alarm.mp3" type="audio/mpeg"  />
+          </audio>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+<dialog class="home__dialog" data-js-timer-dialog>
+  <p class=" home__dialog-title h3">Time is up!</p>
+  <button class="button home__dialog-button" type="button" data-js-timer-dialog-button>OK</button>
+</dialog>
+
+
+</body>
+</html>

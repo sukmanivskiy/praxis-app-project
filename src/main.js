@@ -10,6 +10,9 @@ import './styles/button.scss'
 import './styles/todo-item.scss'
 import './styles/quotes.scss'
 import './styles/notes.scss'
+import './styles/home.scss'
+import './styles/tile.scss'
+import './styles/timer.scss'
 
 import TodoLogic from "./modules/TodoLogic.js";
 import QuoteLogic from "@/modules/QuoteLogic.js";
@@ -17,10 +20,15 @@ import NotesLogic from "@/modules/NotesLogic.js";
 import TodoBg from "@/modules/TodoBg.js";
 import QuotesBg from "@/modules/QuotesBg.js";
 import NotesBg from "@/modules/NotesBg.js";
+import TodoViewer from "@/modules/TodoViewer.js";
+import QuoteViewer from "@/modules/QuoteViewer.js";
+import NotesViewer from "@/modules/NotesViewer.js";
+import Timer from "@/Timer.js";
 
 const isTodoActive= document.querySelector("[data-js-todo]");
 const isQuotesActive= document.querySelector("[data-js-quotes]");
 const isNotesActive= document.querySelector("[data-js-notes]");
+const isHomeActive= document.querySelector("[data-js-home]");
 
 const todoBackground = document.querySelector("[data-js-todo-background]");
 const quotesBackground = document.querySelector("[data-js-quotes-background]");
@@ -40,6 +48,13 @@ if (isQuotesActive) {
 if (isNotesActive) {
   new NotesLogic()
   new NotesBg(notesBackground);
+}
+
+if (isHomeActive) {
+  new TodoViewer()
+  new QuoteViewer()
+  new NotesViewer()
+  new Timer()
 }
 
 

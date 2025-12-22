@@ -1,9 +1,12 @@
 :root {
   --font-family-main: "Josefine Sans" ;
 
-  --color-violet-light: oklch(0.805 0.089 299.191);
-  --color-red: oklch(0.682 0.206 24.431);
+
+  --color-red: oklch(0.657 0.229 26.253);
+  --color-blue: oklch(0.731 0.152 242.865);
+  --color-blue-light: oklch(0.889 0.077 219.213);
   --color-violet: oklch(0.574 0.224 296.125);
+  --color-violet-light: oklch(0.805 0.089 299.191);
   --color-green:oklch(0.8135 0.224 158.4);
   --color-green-light: oklch(0.925 0.091 163.148);
   --color-yellow: oklch(0.8135 0.1648 82.16);
@@ -14,7 +17,10 @@
   --color-white: oklch(1 0 89.876);
   --color-gray: oklch(0.514 0 89.876);
   --color-gray-250: oklch(0.62 0 89.876 / 0.25);
+
   --focusColor: var(--color-white);
+  --titleColorDark: var(--color-gray);
+  --titleColorLight: var(--color-white);
 
   --container-width: 1280px;
   --desktop-width: 1440px;

@@ -3,7 +3,9 @@ export default class {
     root: '[data-js-quotes]',
     quoteText: '[data-js-quotes-text]',
     quotePhilosophy: '[data-js-quotes-philosophy]',
-  };
+  }
+
+  localStorageKey = 'today-quote'
 
   constructor() {
     this.rootElement = document.querySelector(this.selectors.root);
@@ -14,6 +16,7 @@ export default class {
     this.quotes = this.getQuotesList();
     this.state = this.getTodayQuote();
 
+    this.saveTodayQuote();
     this.render();
   }
 
@@ -71,17 +74,17 @@ export default class {
     const index = day % this.quotes.length;
     return this.quotes[index];
   }
+  saveTodayQuote() {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.state));
+  }
 
   render() {
     const { text, philosophy } = this.state;
 
-    // Текст цитати
     this.quoteTextElement.textContent = text;
 
-    // Очищуємо філософію
     this.quotePhilosophyElement.innerHTML = '';
 
-    // Додаємо кожен параграф
     philosophy.forEach(paragraph => {
       const p = document.createElement('p');
       p.textContent = paragraph;

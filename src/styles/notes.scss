@@ -1,4 +1,8 @@
 .notes {
+  --focusColor: var(--color-yellow);
+  --titleColorDark: var(--color-yellow);
+  --titleColorLight: var(--color-yellow-light) ;
+
   &__background {
     background-image:
       radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)),

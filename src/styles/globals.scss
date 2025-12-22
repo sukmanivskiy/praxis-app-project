@@ -1,5 +1,4 @@
-@use './helpers/mixins' as *; // або @import '../helpers/mixins';
-@use './helpers/media' as *;
+
 html {
   &.is-lock {
     overflow: hidden;

@@ -1,0 +1,64 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  row-gap: 16px;
+  width: 100%;
+
+  &__display-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: auto;
+
+    @include mobile-s{
+      max-width: 250px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__display {
+    font-size: fluid(64,30);
+
+    @include mobile-s{
+      font-size: 50px;
+    }
+  }
+  &__controls {
+    display: grid;
+    column-gap: 8px;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  &__modes {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 50px);
+    margin-top: 20px;
+  }
+
+  &__button {
+    background-color: var(--color-dark);
+    border: none;
+    border-radius: var(--border-radius-s);
+    padding: 5px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+
+    @include mobile{
+      padding: 5px 10px;
+    }
+
+    @include hover{
+      scale: 1.1;
+      box-shadow: 0 0 11px 7px var(--color-gray);
+    }
+  }
+}
