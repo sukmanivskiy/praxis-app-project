@@ -34,8 +34,7 @@ export default class {
   render() {
     if (this.items.length === 0) {
       this.emptyElement.textContent = 'Your Notes list is empty';
-      this.emptyElement.style.display = 'block';
-      this.listElement.innerHTML = '';
+      this.listElement.style.display = 'none';
       return;
     }
 

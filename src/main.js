@@ -20,16 +20,19 @@ import NotesLogic from "@/modules/NotesLogic.js";
 import TodoBg from "@/modules/TodoBg.js";
 import QuotesBg from "@/modules/QuotesBg.js";
 import NotesBg from "@/modules/NotesBg.js";
+import MainBg from "@/modules/MainBg.js";
 import TodoViewer from "@/modules/TodoViewer.js";
 import QuoteViewer from "@/modules/QuoteViewer.js";
 import NotesViewer from "@/modules/NotesViewer.js";
 import Timer from "@/Timer.js";
+import mainBg from "@/modules/MainBg.js";
 
 const isTodoActive= document.querySelector("[data-js-todo]");
 const isQuotesActive= document.querySelector("[data-js-quotes]");
 const isNotesActive= document.querySelector("[data-js-notes]");
 const isHomeActive= document.querySelector("[data-js-home]");
 
+const mainBackground = document.querySelector("[data-js-main-background]");
 const todoBackground = document.querySelector("[data-js-todo-background]");
 const quotesBackground = document.querySelector("[data-js-quotes-background]");
 const notesBackground = document.querySelector("[data-js-notes-background]");
@@ -51,6 +54,7 @@ if (isNotesActive) {
 }
 
 if (isHomeActive) {
+  new MainBg(mainBackground);
   new TodoViewer()
   new QuoteViewer()
   new NotesViewer()

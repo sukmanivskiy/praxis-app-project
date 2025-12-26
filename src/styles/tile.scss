@@ -1,7 +1,7 @@
 .tile {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center !important;
   justify-content: space-between;
   row-gap: 32px;
   width: 100%;
@@ -23,6 +23,10 @@
     height: 100%;
     display: flex;
     align-items: center;
+
+    p {
+      margin-inline: auto;
+    }
 
   }
 

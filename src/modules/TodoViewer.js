@@ -12,7 +12,9 @@ export default class {
     this.listElement = this.rootElement.querySelector(this.selectors.list);
     this.emptyElement = this.rootElement.querySelector(this.selectors.empty);
 
-    this.items = this.getItemsFromLocalStorage();
+    this.state = {
+      items:this.getItemsFromLocalStorage(),
+    }
 
     this.render();
   }
@@ -32,7 +34,7 @@ export default class {
   }
 
   render() {
-    if (this.items.length === 0) {
+    if (this.state.items.length === 0) {
       this.emptyElement.textContent = 'Your Tasklist is empty';
       this.emptyElement.style.display = 'block';
       this.listElement.style.display = 'none';
@@ -41,7 +43,7 @@ export default class {
 
     this.emptyElement.style.display = 'none';
 
-    this.listElement.innerHTML = this.items
+    this.listElement.innerHTML = this.state.items
       .slice(0,5).map(
         ({ id, title, isChecked }) => `
           <li class="tile__item" style="color: ${isChecked ? 'var(--color-gray)' : ''}">
@@ -57,5 +59,41 @@ export default class {
         `
       )
       .join('');
+  }
+
+  saveItemsToLocalStorage() {
+    this.state.items = this.sortItems(this.state.items);
+
+    localStorage.setItem(
+      this.localStorageKey,
+      JSON.stringify(this.state.items)
+    );
+  }
+
+  sortItems(items) {
+    return [...items].sort((a, b) => {
+      if (a.isChecked !== b.isChecked) {
+        return a.isChecked - b.isChecked;
+      }
+
+      return 0;
+    });
+  }
+
+  getTodayDate() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  checkAndResetDaily() {
+    const today = this.getTodayDate();
+    const last = localStorage.getItem(this.lastUsedDateKey);
+
+    if (last !== today) {
+
+      this.state.items = [];
+      this.saveItemsToLocalStorage();
+    }
+
+    localStorage.setItem(this.lastUsedDateKey, today);
   }
 }

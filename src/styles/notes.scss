@@ -81,6 +81,7 @@
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
+
   }
 
   &__date {
@@ -91,6 +92,11 @@
 
   &__title {
     color: var(--color-yellow-light);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
   }
 
   &__text {

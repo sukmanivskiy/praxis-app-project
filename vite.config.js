@@ -5,13 +5,14 @@ import {resolve} from 'path'
 export default defineConfig({
   root: 'src',
   build: {
-    outDir: '../../dist',
+    outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/pages/index.html'),
-        about: resolve(__dirname, 'src/pages/about.html'),
-        app: resolve(__dirname, 'src/pages/app.html')
+        main: resolve(__dirname, 'src/index.html'),
+        todo: resolve(__dirname, 'src/todo/index.html'),
+        notes: resolve(__dirname, 'src/notes/index.html'),
+        philosophy: resolve(__dirname, 'src/philosophy/index.html'),
       }
     }
   },
