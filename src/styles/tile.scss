@@ -46,15 +46,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 16px;
     width: 100%;
     background-color:var(--color-dark);
     padding: 16px;
     border-radius: var(--border-radius-s);
+
   }
 
   &__item-inner {
     display: flex;
     column-gap: 16px;
+  }
+
+  &__item-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
   }
 
   &__link--todo {

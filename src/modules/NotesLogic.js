@@ -42,7 +42,7 @@ export default class {
   }
 
   render() {
-    const items = this.state.items;
+    const items = this.state.items.reverse();
 
     this.deleteAllButtonElement.classList.toggle(
       this.stateClasses.isVisible,

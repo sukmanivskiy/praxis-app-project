@@ -25,7 +25,7 @@ import TodoViewer from "@/modules/TodoViewer.js";
 import QuoteViewer from "@/modules/QuoteViewer.js";
 import NotesViewer from "@/modules/NotesViewer.js";
 import Timer from "@/Timer.js";
-import mainBg from "@/modules/MainBg.js";
+import ogImage from "@/assets/images/og-image.png"
 
 const isTodoActive= document.querySelector("[data-js-todo]");
 const isQuotesActive= document.querySelector("[data-js-quotes]");

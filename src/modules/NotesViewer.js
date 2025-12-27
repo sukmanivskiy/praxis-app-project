@@ -40,12 +40,12 @@ export default class {
 
     this.emptyElement.style.display = 'none';
 
-    this.listElement.innerHTML = this.items
+    this.listElement.innerHTML = this.items.reverse()
       .map(
         ({ title, date }) => `
           <li class="tile__item">
-            <span class="notes-viewer__title">${title}</span>
-            <span class="notes-viewer__date">${date}</span>
+            <span class="tile__item-title">${title}</span>
+            <span class="tile__item-date">${date}</span>
           </li>
         `
       )
